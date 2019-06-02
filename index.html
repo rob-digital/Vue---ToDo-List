@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To Do List</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.css">
+ 
+  
+ 
+  
+</head>
+<body>
+<div id="app">
+   
+      <div class="container is-widescreen">
+
+                <section class="hero is-info is-bold" style="margin-bottom: 20px">
+                    <div class="hero-body">
+                      <div class="container">
+                        <h1 class="title">
+                          {{ header }}
+                        </h1>      
+                      </div>        
+                    </div>
+                  </section>
+
+      
+
+        <article class="message is-dark">
+                <div class="message-header">
+                        <input 
+                        class="input" 
+                        type="text" 
+                        placeholder=""
+                        v-model="newItem"
+                        @keyup.enter="saveItem">
+
+                        <a class="button is-danger" 
+                        style="margin-left: 20px"
+                        :disabled="newItem.length === 0"
+                        @click="saveItem"
+                        >Add</a>
+                </div>
+            
+                        
+                            <ul>
+                                <li v-for="item in items">
+                                    <p class="panel-block " style="display: block" >  
+                                        {{item}}
+                                        <button 
+                                        class="delete" 
+                                        aria-label="delete" 
+                                        @click="removeElement(item)"
+                                        style="float: right !important"
+                                        ></button>
+                                    </p>
+                                </li>
+                            </ul>
+                                       
+        </article>
+        </div>
+
+      </div>
+
+
+<script src="main.js"></script>
+
+</body>
+</html>
