@@ -6,11 +6,8 @@
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
   <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.css">
- 
-  
- 
-  
 </head>
+
 <body>
 <div id="app">
    
@@ -37,14 +34,13 @@
                         v-model="newItem"
                         @keyup.enter="saveItem">
 
-                        <a class="button is-danger" 
+                        <button class="button is-danger" 
                         style="margin-left: 20px"
                         :disabled="newItem.length === 0"
                         @click="saveItem"
-                        >Add</a>
+                        >Add</button>
                 </div>
-            
-                        
+
                             <ul>
                                 <li v-for="item in items">
                                     <p class="panel-block " style="display: block" >  
