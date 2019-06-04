@@ -8,8 +8,10 @@ const app = new Vue({
 
     methods: {
         saveItem: function () {
+            if (this.newItem.length != 0) {
             this.items.push(this.newItem)
             this.newItem = ''
+            }
         },
         
         removeElement (item) {
